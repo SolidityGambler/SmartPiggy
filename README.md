@@ -64,8 +64,7 @@ multiplicarSaldo(2); // Duplicará el saldo
 
 **🔐 Modificadores**
 
-soloFactorValido(uint256 factor_)
+`soloFactorValido(uint256 factor_)` Evita multiplicaciones con factores menores a 1:
 
-Evita multiplicaciones con factores menores a 1:
 
 require(factor_ >= 1, "El factor debe ser al menos 1");
