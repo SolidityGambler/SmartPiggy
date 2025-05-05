@@ -23,6 +23,8 @@
 - **Solidity**: versión `0.8.26`
 - **Remix IDE**: para desarrollo, pruebas y despliegue
 
+  
+
 
 
 **🚀 Uso del Contrato**:
