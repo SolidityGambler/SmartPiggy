@@ -15,6 +15,7 @@
  ✅ **Eventos emitidos** para seguimiento de cada acción.
 
  ✅ **Uso de modifiers** para controlar condiciones lógicas antes de ejecutar ciertas funciones.
+ 
 
 
  **⚙️ Tecnologías Utilizadas**
@@ -22,7 +23,10 @@
 - **Solidity**: versión `0.8.26`
 - **Remix IDE**: para desarrollo, pruebas y despliegue
 
-**🚀 Uso del Contrato**
+
+
+**🚀 Uso del Contrato**:
+
 
 📌 **Ejemplo**:
 
