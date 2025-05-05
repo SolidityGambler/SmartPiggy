@@ -45,10 +45,12 @@ Devuelve el saldo actual sin modificar el estado del contrato.
 verSaldo(); // -> 150
 
 4. **🧮 Multiplicar saldo (simular interés)**
+**Multiplica el saldo actual por el factor especificado. Debe ser mayor o igual a 1.**
 
-multiplicarSaldo(uint256 factor);
 
-Multiplica el saldo actual por el factor especificado. Debe ser mayor o igual a 1.
+multiplicarSaldo(uint256 factor)
+
+
 
 📌 **Ejemplo**:
 
