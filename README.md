@@ -32,34 +32,35 @@
 
 📌 **Example**:
 
-Suma el monto especificado al saldo actual del contrato.
+Adds the specified amount to the current contract balance.
 
 ```solidity
-depositar(100);
+deposit(100);
 ```
 
 2. **📤 **Withdraw funds**
 
-Resta el monto del saldo, si es menor o igual al total disponible.
+Subtract the amount from the balance, if it is less than or equal to the total available.
 
 ```solidity
-retirar(uint256 monto);
+withdraw(uint256 balance);
 ```
 
 
 📌 **Example**:
 
- Procesar Exitosamente, si hay al menos 50 en saldo
+ Process Successfully, if there is at least 50 in balance
 
 ```solidity
-retirar(50); 
+withdraw(50); 
 ```
 
 3. **📊 Check current balance**
-Devuelve el saldo actual sin modificar el estado del contrato.
+
+Returns the current balance without changing the contract status.
 
 ```solidity
-verSaldo() public view returns (uint256);
+viewBalance() public view returns (uint256);
 ```
 
 
@@ -67,35 +68,35 @@ verSaldo() public view returns (uint256);
 📌 **Example**:
 
 ```solidity
-verSaldo(); // -> 150
+viewBalance(); // -> 150
 ```
 
 4. **🧮 Multiply balance (simulate interest)**
 
-Multiplica el saldo actual por el factor especificado. Debe ser mayor o igual a 1
+Multiply the current balance by the specified factor. It must be greater than or equal to 1.
 
 ```solitidy
-multiplicarSaldo(uint256 factor)
+multiplyBalance(uint256 factor)
 ```
 
 📌 **Example**:
 
 ```solidity
-multiplicarSaldo(2); // Duplicará el saldo
+multiplyBalance(2); // It will double the balance
 ```
 
 **📑 Events**
 
-    DepositoNuevo(uint256 monto, uint256 nuevoSaldo)
+    NewDeposit(uint256 balance, uint256 newBalance)
 
-    RetiroNuevo(uint256 monto, uint256 saldo)
+    NewWithdrawal(uint256 balance, uint256 balance)
 
-    InteresAplicado(uint256 factor, uint256 nuevoSaldo)
+    InterestApplied(uint256 factor, uint256 newBalance)
 
 **🔐 Modifiers**
 
-`soloFactorValido(uint256 factor_)` Evita multiplicaciones con factores menores a 1:
+`validFactor(uint256 factor_)` Avoid multiplications with factors less than 1:
 
 ```solidity
-require(factor_ >= 1, "El factor debe ser al menos 1");
+require(factor_ >= 1, "The factor must be at least 1");
 ```
