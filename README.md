@@ -1,36 +1,31 @@
 # SmartPiggy
 
-**SmartPiggy** es un contrato inteligente simple pero funcional desarrollado en Solidity, que simula una **alcancía digital personal**. Permite realizar depósitos, retiros, visualizar el saldo y aplicar "intereses" multiplicando el valor acumulado, todo almacenado en la blockchain.
+**SmartPiggy** is a simple yet functional smart contract developed in Solidity that simulates a personal digital piggy bank. It allows users to make deposits, withdraw funds, view their balance, and apply "interest" by multiplying the accumulated value — all stored on the blockchain.
 
-**Características:**
+**Features:**
 
- ✅ **Depósito seguro** de fondos virtuales.
-
- ✅ **Retiro controlado**, validando que haya saldo suficiente.
-
- ✅ **Visualización de saldo** actual sin alterar el estado.
-
- ✅ **Multiplicación de saldo** para simular intereses o recompensas.
-
- ✅ **Eventos emitidos** para seguimiento de cada acción.
-
- ✅ **Uso de modifiers** para controlar condiciones lógicas antes de ejecutar ciertas funciones.
+✅ **Secure deposits of virtual funds.**
+✅ **Controlled withdrawals, validating sufficient balance.**
+✅ **View current balance without modifying state.**
+✅** Multiply balance to simulate interest or rewards.**
+✅ **Events emitted to track every action.**
+✅ **Use of modifiers to control logical conditions before running certain functions.**
  
 
 
- **⚙️ Tecnologías Utilizadas**
+⚙️ **Technologies Used**
 
-- **Solidity**: versión `0.8.26`
-- **Remix IDE**: para desarrollo, pruebas y despliegue
+ **Solidity: version 0.8.26**
+
+ **Remix IDE: for development, testing, and deployment**
 
   
 
+🚀 **Contract Usage:**
 
+**1.📥 Deposit funds**
 
-**🚀 Uso del Contrato**:
-
-
-📌 **Ejemplo**:
+📌 **Example**:
 
 Suma el monto especificado al saldo actual del contrato.
 
@@ -38,7 +33,7 @@ Suma el monto especificado al saldo actual del contrato.
 depositar(100);
 ```
 
-2. **📤 Retirar fondos**
+2. **📤 **Withdraw funds**
 
 Resta el monto del saldo, si es menor o igual al total disponible.
 
@@ -47,7 +42,7 @@ retirar(uint256 monto);
 ```
 
 
-📌 **Ejemplo**:
+📌 **Example**:
 
  Procesar Exitosamente, si hay al menos 50 en saldo
 
@@ -55,7 +50,7 @@ retirar(uint256 monto);
 retirar(50); 
 ```
 
-3. **📊 Consultar el saldo**
+3. **📊 Check current balance**
 Devuelve el saldo actual sin modificar el estado del contrato.
 
 ```solidity
@@ -64,13 +59,13 @@ verSaldo() public view returns (uint256);
 
 
 
-📌 **Ejemplo**:
+📌 **Example**:
 
 ```solidity
 verSaldo(); // -> 150
 ```
 
-4. **🧮 Multiplicar saldo (simular interés)**
+4. **🧮 Multiply balance (simulate interest)**
 
 Multiplica el saldo actual por el factor especificado. Debe ser mayor o igual a 1
 
@@ -78,13 +73,13 @@ Multiplica el saldo actual por el factor especificado. Debe ser mayor o igual a 
 multiplicarSaldo(uint256 factor)
 ```
 
-📌 **Ejemplo**:
+📌 **Example**:
 
 ```solidity
 multiplicarSaldo(2); // Duplicará el saldo
 ```
 
-**📑 Eventos**
+**📑 Events**
 
     DepositoNuevo(uint256 monto, uint256 nuevoSaldo)
 
@@ -92,7 +87,7 @@ multiplicarSaldo(2); // Duplicará el saldo
 
     InteresAplicado(uint256 factor, uint256 nuevoSaldo)
 
-**🔐 Modificadores**
+**🔐 Modifiers**
 
 `soloFactorValido(uint256 factor_)` Evita multiplicaciones con factores menores a 1:
 
