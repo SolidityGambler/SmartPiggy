@@ -15,6 +15,8 @@
 ✅ **Events emitted to track every action.**
 
 ✅ **Use of modifiers to control logical conditions before running certain functions.**
+
+
  
 
 
@@ -24,9 +26,14 @@
 
  **Remix IDE: for development, testing, and deployment**
 
+
+
   
 
 🚀 **Contract Usage:**
+
+
+
 
 **1.📥 Deposit funds**
 
