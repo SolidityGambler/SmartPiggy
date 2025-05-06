@@ -5,10 +5,15 @@
 **Features:**
 
 ✅ **Secure deposits of virtual funds.**
+
 ✅ **Controlled withdrawals, validating sufficient balance.**
+
 ✅ **View current balance without modifying state.**
-✅** Multiply balance to simulate interest or rewards.**
+
+✅**Multiply balance to simulate interest or rewards.**
+
 ✅ **Events emitted to track every action.**
+
 ✅ **Use of modifiers to control logical conditions before running certain functions.**
  
 
