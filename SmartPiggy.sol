@@ -1,60 +1,46 @@
-// Licencia
+// License
 // SPDX-License-Identifier: LGPL-3.0-only
 
-// Versión Solidity
-
+// Solidity Version
 pragma solidity 0.8.26;
 
-// Contrato
+// Contract
+contract SmartPiggy {
 
- contract SmartPiggy {
+// Variables
+uint256 balance = 0;
 
-//variables
-uint256 saldo = 0;
+// Events
+event NewDeposit(uint256 amount, uint256 newBalance);
+event NewWithdrawal(uint256 amount, uint256 balance);
+event InterestApplied(uint256 factor, uint256 newBalance);
 
-//eventos
+// Functions
 
-event DepositoNuevo (uint256 monto, uint256 nuevoSaldo);
-
-event RetiroNuevo (uint256 monto, uint256 saldo);
-
-event InteresAplicado (uint256 factor, uint256 nuevoSaldo);
-
-// functions
-
-function depositar (uint256 monto_) public {
-    saldo += monto_;
-
-emit DepositoNuevo (monto_, saldo); 
+function deposit(uint256 amount_) public {
+    balance += amount_;
+    emit NewDeposit(amount_, balance); 
 }
 
-function retirar (uint256 monto_) public {
-    require(monto_ <= saldo, "No tenes suficiente saldo");
-saldo -=monto_;
-
-emit RetiroNuevo (monto_, saldo);
-
-
+function withdraw(uint256 amount_) public {
+    require(amount_ <= balance, "Insufficient balance");
+    balance -= amount_;
+    emit NewWithdrawal(amount_, balance);
 }
 
-
-function verSaldo() public view returns (uint256) {
-    return saldo;
+function viewBalance() public view returns (uint256) {
+    return balance;
 }
 
-function multiplicarSaldo (uint256 factor_) public {
-saldo *= factor_;
-
-   emit InteresAplicado(factor_, saldo);
-    
-
- }   
-
-modifier soloFactorValido(uint256 factor_) {
-
-    require(factor_ >= 1, "El factor debe ser al menos 1");
-
-_;
+function multiplyBalance(uint256 factor_) public validFactor(factor_) {
+    balance *= factor_;
+    emit InterestApplied(factor_, balance);
 }
 
-  }
+// Modifier
+modifier validFactor(uint256 factor_) {
+    require(factor_ >= 1, "The factor must be at least 1");
+    _;
+}
+
+}
